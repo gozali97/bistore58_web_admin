@@ -19,7 +19,8 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-<body style="background-image: url('{{ asset('dist/img/photo2.png') }}'); background-size: full;">
+<body>
+    {{-- style="background-image: url('{{ asset('dist/img/photo1.png') }}'); background-size: full;" --}}
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">

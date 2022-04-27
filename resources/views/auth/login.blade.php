@@ -1,7 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container mt-5">
+<div class="container mt-1">
+    <div class="row justify-content-center">
+        <img class="mb-3" src="{{ asset('dist/img/baliindah.png') }}" width="80" height="80">
+    </div>
+        <h2 class="row justify-content-center">BALI INDAH PHOTO</h2>
     <div class="row justify-content-center">
         <div class="col-md-6">
             <div class="card">
