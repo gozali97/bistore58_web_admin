@@ -43,7 +43,7 @@
     <!-- Brand Logo -->
     <a href="{{ route('home') }}" class="brand-link">
       <img src="{{ asset('dist/img/baliindah.png') }}" alt="AdminLTE Logo" class="brand-image img-circle">
-      <span class="brand-text font-weight-bold">BISTORE</span>
+      <span class="brand-text font-weight-bold">BIKAMERA</span>
     </a>
 
     <!-- Sidebar -->

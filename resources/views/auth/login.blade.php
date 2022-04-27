@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <img class="mb-3" src="{{ asset('dist/img/baliindah.png') }}" width="80" height="80">
     </div>
-        <h2 class="row justify-content-center text-bold">BALI INDAH PHOTO</h2>
+        <h2 class="row justify-content-center text-bold">BALI INDAH KAMERA</h2>
     <div class="row justify-content-center">
         <div class="col-md-6">
             <div class="card">
