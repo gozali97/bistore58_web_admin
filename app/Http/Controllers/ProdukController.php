@@ -42,7 +42,7 @@ class ProdukController extends Controller
         $file = '';
         if ($request->gambar->getClientOriginalName()) {
             $file = str_replace(' ', '', $request->gambar->getClientOriginalName());
-            $fileName = date('mYdHs') . rand(1, 999) . ' ' . $file;
+            $fileName = date('mYdHs') . rand(1, 999) . '_' . $file;
             $request->gambar->storeAs('public/produk', $fileName);
         }
         $produk = Produk::create(array_merge($request->all(), [
