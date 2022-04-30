@@ -72,9 +72,12 @@
                           </tr>
                         </thead>
                         <tbody>
+                          @php
+                            $no = 1;
+                          @endphp
                             @foreach($listKategori as $data)
                             <tr>
-                                <td>{{$data->id_kategori}}</td>
+                                <td>{{ $no++ }}</td>
                                 <td>{{$data->nama_kategori}}</td>
                                 {{-- <td>{{$data->created_at}}</td>
                                 <td>{{$data->updated_at}}</td> --}}

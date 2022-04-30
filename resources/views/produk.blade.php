@@ -109,9 +109,12 @@
                           </tr>
                         </thead>
                         <tbody>
+                          @php
+                            $no = 1;
+                          @endphp
                             @foreach($listUser as $data)
                             <tr>
-                                <td>{{$data->id}}</td>
+                                <td>{{ $no++ }}</td>
                                 <td>{{$data->nama_produk}}</td>
                                 <td>{{"Rp. ".number_format($data->harga)}}</td>
                                 <td>{{$data->stok}} Pcs</td>
