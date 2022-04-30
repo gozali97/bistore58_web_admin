@@ -52,7 +52,7 @@
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <label>Kategori</label>
-                                            <input type="text" class="form-control" id="kategori_id" placeholder="Kategori" name="kategori_id">
+                                            {{-- <input type="text" class="form-control" id="kategori_id" placeholder="Kategori" name="kategori_id"> --}}
                                             <select class="form-control" name="kategori_id">
                                               @foreach($listKategori as $kat)
                                               <option value="{{$kat->id_kategori}}" >{{$kat->nama_kategori}}</option>
