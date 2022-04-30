@@ -55,7 +55,7 @@
                                             <input type="text" class="form-control" id="kategori_id" placeholder="Kategori" name="kategori_id">
                                             <select class="form-control" name="kategori_id">
                                               @foreach($listKategori as $kat)
-                                              <option value="{{$kat->id_kategori}}" >{{$kat->name_kategori}}</option>
+                                              <option value="{{$kat->id_kategori}}" >{{$kat->nama_kategori}}</option>
                                             @endforeach
                                             </select>
                                           </div>
