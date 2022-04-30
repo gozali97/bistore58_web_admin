@@ -53,11 +53,11 @@
                                         <div class="form-group">
                                             <label>Kategori</label>
                                             <input type="text" class="form-control" id="kategori_id" placeholder="Kategori" name="kategori_id">
-                                            {{-- <select class="form-control" name="kategori_id">
+                                            <select class="form-control" name="kategori_id">
                                               @foreach($listKategori as $kat)
-                                              <option value="id_kategori" >{{$kat->id_kategori}}</option>
+                                              <option value="{{$kat->id_kategori}}" >{{$kat->name_kategori}}</option>
                                             @endforeach
-                                            </select> --}}
+                                            </select>
                                           </div>
                                     </div>
                                   </div>
