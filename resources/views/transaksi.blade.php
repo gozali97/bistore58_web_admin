@@ -40,9 +40,12 @@
                           </tr>
                         </thead>
                         <tbody>
+                          @php
+                          $no = 1;
+                          @endphp
                             @foreach($listPending as $data)
                             <tr>
-                                <td>{{$data->id}}</td>
+                                <td>{{ $no++ }}</td>
                                 <td>{{$data->nama_penerima}}</td>
                                 <td>{{"Rp. ".number_format($data->total_bayar)}}</td>
                                 <td>{{$data->bank}}</td>
