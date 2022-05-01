@@ -104,7 +104,7 @@
                             <th>Nama Produk</th>
                             <th>Harga</th>
                             <th>Stok</th>
-                            <th>Gambar</th>
+                            {{-- <th>Gambar</th> --}}
                             <th style="width: 200px">Aksi</th>
                           </tr>
                         </thead>
@@ -118,7 +118,7 @@
                                 <td>{{$data->nama_produk}}</td>
                                 <td>{{"Rp. ".number_format($data->harga)}}</td>
                                 <td>{{$data->stok}} Pcs</td>
-                                <td><img class="rounded-square" width="50" height="50" src="{{ url($data->gambar) }}" alt=""></td>
+                                {{-- <td><img class="rounded-square" width="50" height="50" src="{{ url($data->gambar) }}" alt=""></td> --}}
                                 <td>
                                   <div class="d-grid gap-2 d-md-block">
                                     <a href="#" class="btn btn-primary"><i class="fa fa-edit mr-1"></i>Edit</a>
