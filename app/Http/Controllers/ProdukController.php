@@ -52,7 +52,7 @@ class ProdukController extends Controller
 
         if ($request->hasFile('gambar')) {
             $input['gambar'] = '/upload/produk/' . str_slug($input['nama_produk'], '-') . '.' . $request->gambar->getClientOriginalExtension();
-            $request->image->move(public_path('/upload/produk/'), $input['gambar']);
+            $request->gambar->move(public_path('/upload/produk/'), $input['gambar']);
         }
 
         Produk::create($input);
