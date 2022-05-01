@@ -39,14 +39,16 @@ class ProdukController extends Controller
     public function store(Request $request)
     {
         // dd($request->all());die();
-        $input = $request->all();
-
-        if ($request->hasFile('gambar')) {
-            $input['gambar'] = '/upload/produk/' . str_slug($input['nama_produk'], '-') . '.' . $request->gambar->getClientOriginalExtension();
-            $request->gambar->move(public_path('/upload/produk/'), $input['gambar']);
+        $fileName = '';
+        if ($request->gambar->getClientOriginalName()) {
+            $file = str_replace(' ', '', $request->gambar->getClientOriginalName());
+            $fileName = 'public/produk/' . date('mYdHs') . rand(1, 999) . '_' . $file;
+            $request->gambar->storeAs('public/produk', $fileName);
         }
 
-        Produk::create($input);
+        $user = Produk::create(array_merge($request->all(), [
+            'gambar' => $fileName
+        ]));
         return redirect('produk');
     }
 
