@@ -51,7 +51,7 @@ class ProdukController extends Controller
         $input = $request->all();
 
         if ($request->hasFile('gambar')) {
-            $input['gambar'] = '/upload/produk/' . str_slug($input['name'], '-') . '.' . $request->image->getClientOriginalExtension();
+            $input['gambar'] = '/upload/produk/' . str_slug($input['nama_produk'], '-') . '.' . $request->image->getClientOriginalExtension();
             $request->image->move(public_path('/upload/produk/'), $input['gambar']);
         }
 
