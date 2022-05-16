@@ -35,7 +35,7 @@ class TransaksiController extends Controller
     public function confirm($id)
     {
         $transaksi = Transaksi::with(['details.produk', 'user'])->where('id', $id)->first();
-
+        dd($transaksi);
         $transaksi->update([
             'status' => "Proses"
         ]);
