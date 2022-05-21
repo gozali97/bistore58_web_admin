@@ -69,7 +69,7 @@ class TransaksiController extends Controller
             $this->error("Transaksi gagal");
         }
     }
-
+    
     public function history($id)
     {
         $transaksis = Transaksi::with(['user'])->whereHas('user', function ($query) use ($id) {
@@ -157,6 +157,13 @@ class TransaksiController extends Controller
         ];
         return $data;
     }
+
+    // Detail Login cPanel
+    // Domain	: www.baliindahphoto.xyz
+    // cPanel Username	: baliind2
+    // cPanel Password	: AJSv*)2Oci71u3
+    // Control Panel URL	: http://ares.id.domainesia.com/cpanel
+    // Alternatif	: http://baliindahphoto.xyz/cpanel
 
     public function error($pesan)
     {

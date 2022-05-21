@@ -10,3 +10,4 @@ class Produk extends Model
         'nama_produk', 'harga', 'kategori_id', 'deskripsi', 'gambar', 'stok',
     ];
 }
+
