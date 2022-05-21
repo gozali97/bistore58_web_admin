@@ -30,6 +30,10 @@ class PymentController extends Controller
         $user = User::where('id', $id_users)->first();
         $transaksi = Transaksi::where('id', $id_transaksi)->first();
 
+        if($user == NULL){
+            $user->name = "";
+        }
+
         // dd($user->name);
 
 
