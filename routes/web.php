@@ -18,6 +18,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/payment', 'PymentController@index')->name('payment');
 Route::resource('/user', 'UserController');
 Route::resource('/produk', 'ProdukController');
 Route::resource('/transaksi', 'TransaksiController');
