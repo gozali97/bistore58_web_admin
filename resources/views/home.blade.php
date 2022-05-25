@@ -26,11 +26,11 @@
           <div class="row">
             <div class="col-12 col-sm-6 col-md-3">
               <div class="info-box">
-                <span class="info-box-icon bg-info elevation-1"><i class="fas fa-cog"></i></span>
+                <span class="info-box-icon bg-info elevation-1"><i class="fas fa-shopping-bag"></i></span>
   
                 <div class="info-box-content">
-                  <span class="info-box-text">Selesai</span>
-                  <span class="info-box-number">0</span>
+                  <span class="info-box-text">Produk</span>
+                  <span class="info-box-number">10</span>
                 </div>
                 <!-- /.info-box-content -->
               </div>
@@ -39,11 +39,11 @@
             <!-- /.col -->
             <div class="col-12 col-sm-6 col-md-3">
               <div class="info-box mb-3">
-                <span class="info-box-icon bg-success elevation-1"><i class="fas fa-thumbs-up"></i></span>
+                <span class="info-box-icon bg-success elevation-1"><i class="fas fa-bars"></i></span>
   
                 <div class="info-box-content">
-                  <span class="info-box-text">Dikirim</span>
-                  <span class="info-box-number">0</span>
+                  <span class="info-box-text">Kategori</span>
+                  <span class="info-box-number">5</span>
                 </div>
                 <!-- /.info-box-content -->
               </div>
@@ -59,8 +59,8 @@
                 <span class="info-box-icon bg-primary elevation-1"><i class="fas fa-shopping-cart"></i></span>
   
                 <div class="info-box-content">
-                  <span class="info-box-text">Proses</span>
-                  <span class="info-box-number">0</span>
+                  <span class="info-box-text">Transaksi</span>
+                  <span class="info-box-number">20</span>
                 </div>
                 <!-- /.info-box-content -->
               </div>
@@ -72,8 +72,8 @@
                 <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-users"></i></span>
   
                 <div class="info-box-content">
-                  <span class="info-box-text">Menunggu</span>
-                  <span class="info-box-number">0</span>
+                  <span class="info-box-text">User</span>
+                  <span class="info-box-number">7</span>
                 </div>
                 <!-- /.info-box-content -->
               </div>
