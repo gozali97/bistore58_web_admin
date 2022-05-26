@@ -21,7 +21,6 @@ class TransaksiController extends Controller
             'jasa_pengiriman' => 'required',
             'ongkir' => 'required',
             'total_bayar' => 'required',
-            'bank' => 'required',
             'no_tlp' => 'required',
         ]);
 
@@ -69,7 +68,7 @@ class TransaksiController extends Controller
             $this->error("Transaksi gagal");
         }
     }
-    
+
     public function history($id)
     {
         $transaksis = Transaksi::with(['user'])->whereHas('user', function ($query) use ($id) {
