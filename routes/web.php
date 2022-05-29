@@ -27,6 +27,6 @@ Route::get('/transaksi/confirm/{id}', 'TransaksiController@confirm')->name('tran
 Route::get('/transaksi/kirim/{id}', 'TransaksiController@kirim')->name('transaksiKirim');
 Route::get('/transaksi/selesai/{id}', 'TransaksiController@selesai')->name('transaksiSelesai');
 Route::get('/notif', 'VtwebController@index');
-Route::get('/vt_notif', 'VtwebController@notification');
+Route::post('/vt_notif', 'VtwebController@notification')->name('notifiation');
 Route::resource('/kategori', 'KategoriController');
 Route::get('/payment/payment_submit', 'PymentController@payment_submit');
