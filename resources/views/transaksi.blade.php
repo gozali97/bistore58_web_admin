@@ -90,8 +90,8 @@
                             <tr>
                                 <td>{{ $no++ }}</td>
                                 <td>{{$data->nama_penerima}}</td>
-                                <td>{{"Rp. ".number_format($data->total_bayar)}}</td>
                                 <td>{{$data->bank}}</td>
+                                <td>{{"Rp. ".number_format($data->total_bayar)}}</td>
                                 <td>{{$data->status}}</td>
                                 <td>
                                   <div class="d-grid gap-2 d-md-block">
