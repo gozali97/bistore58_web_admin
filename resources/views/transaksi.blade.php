@@ -33,8 +33,9 @@
                           <tr>
                             <th>No</th>
                             <th>Nama</th>
+                            <th>Bank</th>                        
+                            <th>Kode Unik</th>
                             <th>Total Harga</th>
-                            <th>Bank</th>
                             <th>Status</th>
                             <th style="width: 200px">Aksi</th>
                           </tr>
@@ -47,8 +48,9 @@
                             <tr>
                                 <td>{{ $no++ }}</td>
                                 <td>{{$data->nama_penerima}}</td>
-                                <td>{{"Rp. ".number_format($data->total_bayar)}}</td>
                                 <td>{{$data->bank}}</td>
+                                <td>{{$data->kode_unik}}</td>
+                                <td>{{"Rp. ".number_format($data->total_bayar)}}</td>
                                 <td>{{$data->status}}</td>
                                 <td>
                                   <div class="d-grid gap-2 d-md-block">
@@ -74,8 +76,9 @@
                           <tr>
                             <th>No</th>
                             <th>Nama</th>
-                            <th>Total Harga</th>
                             <th>Bank</th>
+                            <th>Kode Unik</th>
+                            <th>Total Harga</th>
                             <th>Status</th>
                             <th style="width: 200px">Aksi</th>
                           </tr>
@@ -88,8 +91,9 @@
                             <tr>
                                 <td>{{ $no++ }}</td>
                                 <td>{{$data->nama_penerima}}</td>
-                                <td>{{"Rp. ".number_format($data->total_bayar)}}</td>
                                 <td>{{$data->bank}}</td>
+                                <td>{{$data->kode_unik}}</td>
+                                <td>{{"Rp. ".number_format($data->total_bayar)}}</td>
                                 <td>{{$data->status}}</td>
                                 <td>
                                   <div class="d-grid gap-2 d-md-block">

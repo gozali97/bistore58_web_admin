@@ -19,8 +19,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/payment', 'PymentController@index')->name('payment');
-
-Route::get('/payment/payment_submit', 'PymentController@payment_submit');
 Route::resource('/user', 'UserController');
 Route::resource('/produk', 'ProdukController');
 Route::resource('/transaksi', 'TransaksiController');
@@ -29,4 +27,4 @@ Route::get('/transaksi/confirm/{id}', 'TransaksiController@confirm')->name('tran
 Route::get('/transaksi/kirim/{id}', 'TransaksiController@kirim')->name('transaksiKirim');
 Route::get('/transaksi/selesai/{id}', 'TransaksiController@selesai')->name('transaksiSelesai');
 Route::resource('/vt_notif', 'VtwebController@notification');
-// Route::resource('/kategori', 'KategoriController');
+Route::resource('/kategori', 'KategoriController');
