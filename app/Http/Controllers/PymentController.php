@@ -129,6 +129,7 @@ class PymentController extends Controller
             'permata_va_number' => $permata_va_number,
             'tgl_payment' => date('Y-m-d H:i:s'),
             'status' => 'Proses',
+            'order_id' => $json->order_id,
         ];
 
 
