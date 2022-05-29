@@ -75,8 +75,9 @@
                           <tr>
                             <th>No</th>
                             <th>Nama</th>
-                            <th>Total Harga</th>
                             <th>Bank</th>
+                            <th>Kode Unik</th>
+                            <th>Total Harga</th>
                             <th>Status</th>
                             <th style="width: 200px">Aksi</th>
                           </tr>
