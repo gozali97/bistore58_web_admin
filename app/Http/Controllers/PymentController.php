@@ -74,11 +74,10 @@ class PymentController extends Controller
     }
 
     public function payment_submit(Request $request){
-        // dd($request->json);
         $json = json_decode($request->get('json'));
         date_default_timezone_set('Asia/Jakarta');
         $id_transaksi = $request->id_transaksi;
- 
+        
         if(isset($json->va_numbers[0]->bank)){
 			$bank = $json->va_numbers[0]->bank;
 		}else{
@@ -131,7 +130,6 @@ class PymentController extends Controller
             'status' => 'Proses',
             'order_id' => $json->order_id,
         ];
-
 
         $this->Transaksi->update_data($id_transaksi, $data);
 

@@ -29,7 +29,11 @@ class Transaksi extends Model
         return DB::table('transaksis')->where('id', $id)->first();
     }
 
-    public function update_data($order_id, $data){
-        DB::table('transaksis')->where('order_id', $order_id)->update($data);
+    public function update_data($id, $data){
+        DB::table('transaksis')->where('id', $id)->update($data);
+    }
+
+    public function update_status($order_id, $data){
+        DB::table('transaksis')->where('id', $order_id)->update($data);
     }
 }

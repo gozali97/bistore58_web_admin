@@ -137,7 +137,7 @@ class VtwebController extends Controller
                 'status' => 'Proses Dikirim'
             ];
 
-            $this->Transaksi->update_data($order_id, $data);
+            $this->Transaksi->update_status($order_id, $data);
          
         }
    

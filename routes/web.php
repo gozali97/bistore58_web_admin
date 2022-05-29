@@ -28,3 +28,4 @@ Route::get('/transaksi/kirim/{id}', 'TransaksiController@kirim')->name('transaks
 Route::get('/transaksi/selesai/{id}', 'TransaksiController@selesai')->name('transaksiSelesai');
 Route::resource('/vt_notif', 'VtwebController@notification');
 Route::resource('/kategori', 'KategoriController');
+Route::get('/payment/payment_submit', 'PymentController@payment_submit');
