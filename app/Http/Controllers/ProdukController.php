@@ -15,9 +15,9 @@ class ProdukController extends Controller
      */
     public function index()
     {
-        $user['listUser'] = Produk::all();
+        $produk['listProduk'] = Produk::all();
         $kategori['listKategori'] = Kategori::all();
-        return view('produk')->with($user)->with($kategori);
+        return view('produk')->with($produk)->with($kategori);
     }
 
     /**
@@ -94,6 +94,13 @@ class ProdukController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $produk = Produk::findOrFail($id);
+
+        // if (!$produk->image == NULL){
+        //     unlink(public_path($produk->image));
+        // }
+
+        Produk::destroy($id);
+        return redirect()->back()->with('status', 'Anda berhasil menghapus produk' . $produk->nama_produk);
     }
 }
