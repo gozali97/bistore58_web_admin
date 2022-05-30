@@ -68,7 +68,7 @@
                   <div class="card">
                     <!-- /.card-header -->
                     <div class="card-header">
-                      <h3 class="card-title">Transaksi Selesai</h3>
+                      <h3 class="card-title">Transaksi Diproses</h3>
                     </div>
                     <div class="card-body md-3">
                       <table class="table table-bordered">
