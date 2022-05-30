@@ -24,6 +24,7 @@ Route::resource('/produk', 'ProdukController');
 Route::resource('/transaksi', 'TransaksiController');
 Route::get('/transaksi/batal/{id}', 'TransaksiController@batal')->name('transaksiBatal');
 Route::get('/transaksi/confirm/{id}', 'TransaksiController@confirm')->name('transaksiConfirm');
+Route::get('/transaksi/packing/{id}', 'TransaksiController@packing')->name('transaksiPacking');
 Route::get('/transaksi/kirim/{id}', 'TransaksiController@kirim')->name('transaksiKirim');
 Route::get('/transaksi/selesai/{id}', 'TransaksiController@selesai')->name('transaksiSelesai');
 Route::get('/notif', 'VtwebController@index');

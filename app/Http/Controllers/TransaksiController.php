@@ -14,8 +14,8 @@ class TransaksiController extends Controller
      */
     public function index()
     {
-        $transaksiPending['listPending'] = Transaksi::whereStatus("Menunggu")->get();
-        $transaksiSelesai['listSelesai'] = Transaksi::where("Status", "NOT LIKE", "%Menunggu%")->get();
+        $transaksiPending['listPending'] = Transaksi::whereStatus("Menunggu Pembayaran")->get();
+        $transaksiSelesai['listSelesai'] = Transaksi::where("Status", "NOT LIKE", "%Menunggu Pembayaran%")->get();
         return view('transaksi')->with($transaksiPending)->with($transaksiSelesai);
     }
 
@@ -36,9 +36,22 @@ class TransaksiController extends Controller
     {
         $transaksi = Transaksi::with(['details.produk', 'user'])->where('id', $id)->first();
         $transaksi->update([
-            'status' => "Proses"
+            'status' => "Pembayaran Dikonfirmasi"
         ]);
         $this->pushNotif('Transaksi Dikonfirmasi', "Transaksi " . $transaksi->details[0]->produk->nama_produk . " sedang diprosess", $transaksi->user->fcm);
+
+        return redirect('transaksi');
+    }
+
+    public function packing($id)
+    {
+        $transaksi = Transaksi::with(['details.produk', 'user'])->where('id', $id)->first();
+
+        $transaksi->update([
+            'status' => "Packing"
+        ]);
+
+        $this->pushNotif('Produk Dipacking', "Transaksi " . $transaksi->details[0]->produk->nama_produk . " telah dipacking", $transaksi->user->fcm);
 
         return redirect('transaksi');
     }

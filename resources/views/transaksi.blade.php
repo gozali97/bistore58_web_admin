@@ -100,8 +100,10 @@
                                     @if($data->status == "Dikirim")
                                     <a href="{{route('transaksiSelesai', $data->id)}}"  class="btn btn-block btn-primary">Selesai</a>
                                     {{-- <a href="#" class="btn btn-danger"><i class="fa fa-trash mr-1"></i>Hapus</a> --}}
-                                    @elseif($data->status == "Proses")
-                                    <a href="{{route('transaksiKirim', $data->id)}}"  class="btn btn-block btn-success">Kirim</a>
+                                    @elseif($data->status == "Pembayaran Dikonfirmasi")
+                                    <a href="{{route('transaksiPacking', $data->id)}}"  class="btn btn-block btn-success">Packing</a>
+                                    @elseif($data->status == "Packing")
+                                    <a href="{{route('transaksiKirim', $data->id)}}"  class="btn btn-block btn-success">Dikirim</a>
                                     @elseif($data->status == "Selesai" || $data->status == "Batal")
                                     <a href="#"  class="btn btn-block btn-secondary">Detail</a>
                                     @endif
