@@ -30,7 +30,7 @@
   
                 <div class="info-box-content">
                   <span class="info-box-text">Produk</span>
-                  <span class="info-box-number">10</span>
+                  <span class="info-box-number">{{ \App\Produk::count() }}</span>
                 </div>
                 <!-- /.info-box-content -->
               </div>
@@ -43,7 +43,7 @@
   
                 <div class="info-box-content">
                   <span class="info-box-text">Kategori</span>
-                  <span class="info-box-number">5</span>
+                  <span class="info-box-number">{{ \App\Kategori::count() }}</span>
                 </div>
                 <!-- /.info-box-content -->
               </div>
@@ -60,7 +60,7 @@
   
                 <div class="info-box-content">
                   <span class="info-box-text">Transaksi</span>
-                  <span class="info-box-number">20</span>
+                  <span class="info-box-number">{{ \App\Transaksi::count() }}</span>
                 </div>
                 <!-- /.info-box-content -->
               </div>
@@ -73,7 +73,7 @@
   
                 <div class="info-box-content">
                   <span class="info-box-text">User</span>
-                  <span class="info-box-number">7</span>
+                  <span class="info-box-number">{{ \App\User::count() }}</span>
                 </div>
                 <!-- /.info-box-content -->
               </div>
