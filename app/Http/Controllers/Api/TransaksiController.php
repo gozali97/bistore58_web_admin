@@ -32,7 +32,7 @@ class TransaksiController extends Controller
         $kode_payment = "INV/PYM/" . now()->format('y-m-d') . "/" . rand(100, 999);
         $kode_trx = "INV/PYM/" . now()->format('y-m-d') . "/" . rand(100, 999);
         $kode_unik = rand(100, 999);
-        $status = "Menunggu";
+        $status = "Menunggu Pembayaran";
         $expired_at = now()->addDay();
 
         $dataTransaksi = array_merge($request->all(), [
