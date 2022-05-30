@@ -32,13 +32,13 @@
                     <div class="card-body md-3">
                       <table class="table table-bordered">
                         <thead>
-                          <tr>
+                          <tr style="align-content: center">
                             <th>No</th>
                             <th>Nama Produk</th>
                             <th>Harga</th>
                             <th>Stok</th>
                             {{-- <th>Gambar</th> --}}
-                            <th style="width: 200px">Aksi</th>
+                            <th colspan="2">Aksi</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -53,16 +53,17 @@
                                 <td>{{$data->stok}} Pcs</td>
                                 {{-- <td><img class="rounded-square" width="50" height="50" src="{{ url($data->gambar) }}" alt=""></td> --}}
                                 <td>
-                                  <div class="d-grid gap-2 d-md-block">
-                                    <a href="#" class="btn btn-primary"><i class="fa fa-edit mr-1"></i>Edit</a>
-                                    <form action="{{ route('produk.destroy', ['id' => $data->id]) }}" method="post" onsubmit="return confirm('Apa anda yakin ingin menghapus produk ini ?')">
-                                      @csrf
-                                      @method('DELETE')
-                                      <button class="btn btn-danger" type="submit">Delete</button>
-                                  </form>
+                                      <a href="#" class="btn btn-primary"><i class="fa fa-edit mr-1"></i>Edit</a>
+                                    </td>
+                                    <td>
+                                      <form action="{{ route('produk.destroy', ['id' => $data->id]) }}" method="post" onsubmit="return confirm('Apa anda yakin ingin menghapus produk ini ?')">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button class="btn btn-danger" type="submit"><i class="fa fa-trash mr-1"></i>Delete</button>
+                                    </form>
+                                    </td>
                                     {{-- <a href="#" class="btn btn-danger" data-id="{{$data->id}}" data-toggle="modal" data-target="#delete"><i class="fa fa-trash mr-1"></i>Hapus</a> --}}
-                                  </div>
-                                </td>
+                                  
                               </tr>  
                               @endforeach
                         </tbody>
