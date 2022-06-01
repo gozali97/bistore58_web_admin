@@ -12,7 +12,7 @@ class TransaksiDetail extends Model
 
     public function transaksi()
     {
-        return $this->belongsTo(Transaksi::class, "transkasi_id", "id_transaksi");
+        return $this->belongsTo(Transaksi::class, "transkasi_id", "id");
     }
 
     public function produk()

@@ -39,6 +39,7 @@ class Transaksi extends Model
     {
         error_log(strval($order_id));
         error_log($status);
+        // DB::table('transaksis')->where('transaksis');
         DB::table('transaksis')->where('order_id', $order_id)->update([
             'status' => $status
         ]);
