@@ -34,7 +34,9 @@ class VtwebController extends Controller
 
 
         if ($result) {
-            $notif = $vt->status('725591461');
+            // $notif = $vt->status($result->order_id);
+            $notif = $vt->status($result->order_id);
+            // echo $result->order_id;
             // error_log(print_r($result,TRUE));
 
             $transaction = $notif->transaction_status;
