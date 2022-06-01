@@ -30,8 +30,10 @@ class VtwebController extends Controller
         $vt = new Veritrans;
         $json_result = file_get_contents('php://input');
         $result = json_decode($json_result);
-        echo 'test notification handler 2</br>';
+        print 'test notification handler 2</br>';
+        error_log('hit from midtrans');
 
+        print 'test notification handler 2</br>';
 
         if ($result) {
             // $notif = $vt->status($result->order_id);
@@ -64,8 +66,10 @@ class VtwebController extends Controller
                     } else {
                         if ($fraud == 'deny') {
                             $this->status($order_id, "Pembayaran gagal");
+                            error_log("Pembayaran gagal");
                         } else {
                             $this->status($order_id, "Pembayaran Dikonfirmasi");
+                            error_log("Pembayaran Dikonfirmasi");
                         }
                         echo "Transaction order_id: " . $order_id . " successfully captured using " . $type;
                     }
@@ -73,8 +77,10 @@ class VtwebController extends Controller
             } else if ($transaction == 'settlement') {
                 $this->status($order_id, "Pembayaran Dikonfirmasi");
                 echo "transaksi berhasil";
+                error_log("Pembayaran Dikonfirmasi");
             } else {
                 echo "transaksi gagal";
+                error_log("transaksi gagal");
             }
         } else {
             echo "gagal";
@@ -83,9 +89,6 @@ class VtwebController extends Controller
 
     public function status($order_id, $status)
     {
-        $data = [
-            'status' => $status
-        ];
-        $this->Transaksi->update_status($order_id, $data);
+        $this->Transaksi->update_status($order_id, $status);
     }
 }

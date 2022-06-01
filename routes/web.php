@@ -30,3 +30,5 @@ Route::get('/transaksi/selesai/{id}', 'TransaksiController@selesai')->name('tran
 Route::get('/notif', 'VtwebController@index');
 Route::resource('/kategori', 'KategoriController');
 Route::get('/payment/payment_submit', 'PymentController@payment_submit');
+
+Route::post('/notif/vt_notif', 'VtwebController@notif')->name('notif');
