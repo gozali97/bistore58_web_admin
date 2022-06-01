@@ -28,6 +28,5 @@ Route::get('/transaksi/packing/{id}', 'TransaksiController@packing')->name('tran
 Route::get('/transaksi/kirim/{id}', 'TransaksiController@kirim')->name('transaksiKirim');
 Route::get('/transaksi/selesai/{id}', 'TransaksiController@selesai')->name('transaksiSelesai');
 Route::get('/notif', 'VtwebController@index');
-Route::get('/vt_notif', 'VtwebController@notif')->name('notif');
 Route::resource('/kategori', 'KategoriController');
 Route::get('/payment/payment_submit', 'PymentController@payment_submit');
