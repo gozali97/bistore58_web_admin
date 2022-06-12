@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Transaksi;
+use App\TransaksiDetail;
 
 class TransaksiController extends Controller
 {
@@ -14,9 +15,12 @@ class TransaksiController extends Controller
      */
     public function index()
     {
-        $transaksiPending['listPending'] = Transaksi::whereStatus("Menunggu Pembayaran")->get();
+        // $transaksiPending['listPending'] = Transaksi::whereStatus("Menunggu Pembayaran")->get();
+        $transaksiPending['listPending'] = Transaksi::with('details.produk')->whereStatus("Menunggu Pembayaran")->get();
         $transaksiSelesai['listSelesai'] = Transaksi::where("Status", "NOT LIKE", "%Menunggu Pembayaran%")->get();
+        // dd($transaksiPending['listPending']);
         return view('transaksi')->with($transaksiPending)->with($transaksiSelesai);
+    
     }
 
     public function batal($id)

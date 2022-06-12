@@ -34,7 +34,7 @@
                             <th>No</th>
                             <th>Nama</th>
                             <th>Bank</th>                        
-                            {{-- <th>Kode Unik</th> --}}
+                            <th>Produk</th>
                             <th>Total Harga</th>
                             <th>Status</th>
                             <th style="width: 200px">Aksi</th>
@@ -49,7 +49,13 @@
                                 <td>{{ $no++ }}</td>
                                 <td>{{$data->nama_penerima}}</td>
                                 <td>{{$data->bank}}</td>
-                                {{-- <td>{{$data->kode_unik}}</td> --}}
+                                <td>
+                                  <ul>
+                                  @foreach($data->details as $detail)
+                                    <li>{{ $detail->produk->nama_produk }}</li>
+                                  @endforeach
+                                  </ul>
+                                  </td>
                                 <td>{{"Rp. ".number_format($data->total_bayar)}}</td>
                                 <td>{{$data->status}}</td>
                                 <td>
