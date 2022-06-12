@@ -40,9 +40,25 @@ class Transaksi extends Model
         error_log(strval($order_id));
         error_log($status);
         // DB::table('transaksis')->where('transaksis');
-        DB::table('transaksis')->where('order_id', $order_id)->update([
-            'status' => $status
-        ]);
+
+        DB::beginTransaction();
+        try {
+            $transaksi = DB::table('transaksis')->where('order_id', $order_id)->first();
+            $transakisDetail = DB::table('transaksi_details')->where('transaksi_id', $transaksi->id)->get();
+            DB::table('transaksis')->where('order_id', $order_id)->update([
+                'status' => $status
+            ]);
+
+            foreach ($transakisDetail as $detail) {
+                $total_awal = DB::table('produks')->where('id', $detail->produk_id)->first();
+                DB::table('produks')->where('id', $detail->produk_id)->update([
+                    'stok' => $total_awal->stok - $detail->total_item
+                ]);
+            }
+        } catch (\Exception $e) {
+            DB::rollback();
+        }
+
         error_log('update status transaksi');
     }
 }
