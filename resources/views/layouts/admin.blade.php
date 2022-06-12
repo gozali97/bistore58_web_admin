@@ -108,27 +108,13 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-cogs"></i>
+            <a href="{{ route('user.index') }}" class="nav-link">
+              <i class="nav-icon fas fa-users"></i>
               <p>
-                Setting
-                <i class="fas fa-angle-left right"></i>
+                Users
               </p>
             </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="{{ route('user.index') }}" class="nav-link">
-                  <i class="far fa-user nav-icon"></i>
-                  <p>User</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Lain-lain</p>
-                </a>
-              </li>
-        </ul>
+          </li>
         <li class="nav-item">
             <a class="nav-link" href="{{ route('logout') }}"
                 onclick="event.preventDefault();
