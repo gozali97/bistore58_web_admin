@@ -13,7 +13,7 @@ class UserController extends Controller
     {
         // dd($request->all());
         // die();
-        $user = User::where('email', $request->email)->first();
+        $user = User::where('email', $request->email)->where('role', 'Pelanggan')->first();
 
         if ($user) {
 
