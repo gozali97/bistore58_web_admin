@@ -17,7 +17,7 @@ class TransaksiController extends Controller
     {
         // $transaksiPending['listPending'] = Transaksi::whereStatus("Menunggu Pembayaran")->get();
         $transaksiPending['listPending'] = Transaksi::with('details.produk')->whereStatus("Menunggu Pembayaran")->get();
-        $transaksiSelesai['listSelesai'] = Transaksi::where("Status", "NOT LIKE", "%Menunggu Pembayaran%")->get();
+        $transaksiSelesai['listSelesai'] = Transaksi::with('details.produk')->where("Status", "NOT LIKE", "%Menunggu Pembayaran%")->get();
         // dd($transaksiPending['listPending']);
         return view('transaksi')->with($transaksiPending)->with($transaksiSelesai);
     
