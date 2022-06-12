@@ -55,6 +55,7 @@ class Transaksi extends Model
                     'stok' => $total_awal->stok - $detail->total_item
                 ]);
             }
+            DB::commit();
         } catch (\Exception $e) {
             DB::rollback();
         }
