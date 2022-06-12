@@ -34,6 +34,7 @@
                         <th>Nama</th>
                         <th>Email</th>
                         <th>No Telepon</th>
+                        <th>Status</th>
                         <th>Aksi</th>
                       </tr>
                     </thead>
@@ -44,6 +45,7 @@
                         <td>{{$data->name}}</td>
                         <td>{{$data->email}}</td>
                         <td>{{$data->phone}}</td>
+                        <td>{{$data->role}}</td>
                         <td>
                           <div class="d-grid gap-2 d-md-block">
                             <a href="#" class="btn btn-primary"><i class="fa fa-edit mr-1"></i>Edit</a>
