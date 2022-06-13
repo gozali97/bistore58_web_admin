@@ -21,6 +21,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/payment', 'PymentController@index')->name('payment');
 Route::resource('/user', 'UserController');
 Route::resource('/produk', 'ProdukController');
+Route::get('/produk/detail/{id}', 'ProdukController@detail')->name('produk.detail');
 Route::resource('/transaksi', 'TransaksiController');
 Route::get('/transaksi/batal/{id}', 'TransaksiController@batal')->name('transaksiBatal');
 Route::get('/transaksi/confirm/{id}', 'TransaksiController@confirm')->name('transaksiConfirm');

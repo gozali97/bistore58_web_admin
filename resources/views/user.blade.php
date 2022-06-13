@@ -39,17 +39,25 @@
                       </tr>
                     </thead>
                     <tbody>
+                      @php
+                      $no = 1;
+                    @endphp
                         @foreach($listUser as $data)
                       <tr>
-                        <td>{{$data->id}}</td>
+                        <td>{{$no++}}</td>
                         <td>{{$data->name}}</td>
                         <td>{{$data->email}}</td>
                         <td>{{$data->phone}}</td>
                         <td>{{$data->role}}</td>
                         <td>
-                          <div class="d-grid gap-2 d-md-block">
                             <a href="#" class="btn btn-primary"><i class="fa fa-edit mr-1"></i>Edit</a>
-                            <a href="#" class="btn btn-danger"><i class="fa fa-trash mr-1"></i>Hapus</a>
+                        </td>
+                        <td>
+                             <form action="{{ route('user.destroy', ['id' => $data->id]) }}" method="post" onsubmit="return confirm('Apa anda yakin ingin menghapus user ini ?')">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button class="btn btn-danger" type="submit"><i class="fa fa-trash mr-1"></i>Delete</button>
+                                    </form>
                           </div>
                         </td>
                       </tr>

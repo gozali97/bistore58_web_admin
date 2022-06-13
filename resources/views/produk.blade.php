@@ -18,7 +18,15 @@
         </div><!-- /.container-fluid -->
       </div>
       <!-- /.content-header -->
-  
+      <div class="box-header with-border">
+        @if(session('status'))
+            <div class="alert alert-success alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                <i class="icon fa fa-check"></i> Success! &nbsp;
+                {{ session('status') }}
+            </div>
+        @endif
+    </div>
       <!-- Main content -->
       <section class="content">
         <div class="container-fluid">
@@ -30,7 +38,7 @@
                 <!-- /.card-header -->
                     <!-- /.card-header -->
                     <div class="card-body md-3">
-                      <table class="table table-bordered">
+                      <table class="table table-striped">
                         <thead>
                           <tr style="align-content: center">
                             <th>No</th>
@@ -38,7 +46,7 @@
                             <th>Harga</th>
                             <th>Stok</th>
                             {{-- <th>Gambar</th> --}}
-                            <th colspan="2">Aksi</th>
+                            <th>Aksi</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -53,7 +61,8 @@
                                 <td>{{$data->stok}} Pcs</td>
                                 {{-- <td><img class="rounded-square" width="50" height="50" src="{{ url($data->gambar) }}" alt=""></td> --}}
                                 <td>
-                                      <a href="#" class="btn btn-primary"><i class="fa fa-edit mr-1"></i>Edit</a>
+                                      <a href="{{ route('produk.edit', ['id' => $data->id]) }}" class="btn btn-primary"><i class="fa fa-edit mr-1"></i>Edit</a>
+                                      <a href="{{ route('produk.detail', ['id' => $data->id]) }}" class="btn btn-info"><i class="fa fa-edit mr-1"></i>Detail</a>
                                     </td>
                                     <td>
                                       <form action="{{ route('produk.destroy', ['id' => $data->id]) }}" method="post" onsubmit="return confirm('Apa anda yakin ingin menghapus produk ini ?')">

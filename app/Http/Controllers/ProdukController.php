@@ -39,16 +39,24 @@ class ProdukController extends Controller
     public function store(Request $request)
     {
         // dd($request->all());die();
-        $fileName = '';
-        if ($request->gambar->getClientOriginalName()) {
-            $file = str_replace(' ', '', $request->gambar->getClientOriginalName());
-            $fileName = 'public/produk/' . date('mYdHs') . rand(1, 999) . '_' . $file;
-            $request->gambar->storeAs('public/produk', $fileName);
+        // $fileName = '';
+        // if ($request->gambar->getClientOriginalName()) {
+        //     $file = str_replace(' ', '', $request->gambar->getClientOriginalName());
+        //     $fileName = 'public/produk/' . date('mYdHs') . rand(1, 999) . '_' . $file;
+        //     $request->gambar->storeAs('public/produk', $fileName);
+        // }
+
+        // $produk = Produk::create(array_merge($request->all(), [
+        //     'gambar' => $fileName
+        // ]));
+        $input = $request->all();
+
+        if ($request->hasFile('gambar')){
+            $input['gambar'] = '/public/produk/'.str_slug($input['nama_produk'], '-').'.'.$request->gambar->getClientOriginalExtension();
+            $request->gambar->move(public_path('/public/produk/'), $input['gambar']);
         }
 
-        $user = Produk::create(array_merge($request->all(), [
-            'gambar' => $fileName
-        ]));
+        Produk::create($input);
         return redirect('produk');
     }
 
@@ -71,7 +79,9 @@ class ProdukController extends Controller
      */
     public function edit($id)
     {
-        //
+        $produk = Produk::findOrFail($id);
+        $kategori = Kategori::orderBy('nama_kategori','asc')->get();
+        return view('editproduk', compact('produk','kategori'));
     }
 
     /**
@@ -83,7 +93,21 @@ class ProdukController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
+        $input = $request->all();
+        $produk = Produk::findOrFail($id);
+        $input['gambar'] = $produk->gambar;
+
+        if ($request->hasFile('gambar')){
+            if (!$produk->gambar == NULL){
+                unlink(public_path($produk->gambar));
+            }
+            $input['gambar'] = '/public/produk/'.str_slug($input['gambar'], '-').'.'.$request->gambar->getClientOriginalExtension();
+            $request->gambar->move(public_path('/public/produk/'), $input['gambar']);
+        }
+
+        $produk->update($input);
+        return redirect('produk')->with('status','Anda berhasil mengubah data produk');
     }
 
     /**
@@ -103,4 +127,11 @@ class ProdukController extends Controller
         Produk::destroy($id);
         return redirect()->back()->with('status', 'Anda berhasil menghapus produk' . $produk->nama_produk);
     }
+
+    public function detail($id)
+    {
+        $produk = Produk::findOrFail($id);
+        return view('detailproduk',compact('produk'));
+    }
+
 }
