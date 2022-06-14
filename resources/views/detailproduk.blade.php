@@ -26,7 +26,8 @@
           <div class="col-12 col-sm-6">
             <h3 class="d-inline-block d-sm-none">{{ $produk->nama_produk }}</h3>
             <div class="col-12">
-              <img class="product-image" src="{{ asset('storage/') . '/' . $produk->gambar }}" alt="Photo">
+              <img class="product-image" src="{{ asset('public/storage/') . '/' . $produk->gambar }}" alt="Photo">
+              {{-- <img class="product-image" src="{{ asset('storage/') . '/' . $produk->gambar }}" alt="Photo"> --}}
             </div>
           </div>
           <div class="col-12 col-sm-6">

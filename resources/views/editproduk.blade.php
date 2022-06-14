@@ -71,7 +71,8 @@
                       <div class="select2-purple">
                         <input type="file" class="form-control" id="gambar" name="gambar" placeholder="Enter image">
                       </div>
-                      <img src="{{ asset('storage/') . '/' . $produk->gambar }}" alt="Photo">
+                      <img src="{{ asset('public/storage/') . '/' . $produk->gambar }}" alt="Photo">
+                      {{-- <img src="{{ asset('storage/') . '/' . $produk->gambar }}" alt="Photo"> --}}
                     <!-- /.form-group -->
                   </div>
                   <!-- /.col -->
