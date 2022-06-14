@@ -53,6 +53,11 @@
                     <label>Harga</label>
                     <input type="text" class="form-control" id="harga" name="harga" placeholder="Masukkan harga" value="{{ $produk->harga }}" autofocus required>
                   </div>
+                  
+                  <div class="form-group">
+                    <label>Stok</label>
+                     <input type="text" class="form-control" id="stock" name="stock" placeholder="Masukkan stock" value="{{ $produk->stok }}" autofocus required>
+                  </div>
                   <!-- /.form-group -->
                 </div>
                 <!-- /.col -->
@@ -64,8 +69,9 @@
                     <div class="form-group">
                       <label>Gambar</label>
                       <div class="select2-purple">
-                        <input type="file" class="form-control" id="gambar" name="gambar" placeholder="Enter image" required>
+                        <input type="file" class="form-control" id="gambar" name="gambar" placeholder="Enter image">
                       </div>
+                      <img src="{{ asset('storage/') . '/' . $produk->gambar }}" alt="Photo">
                     <!-- /.form-group -->
                   </div>
                   <!-- /.col -->
@@ -75,10 +81,6 @@
               <!-- /.row -->
               <div class="row">
                 <div class="col-12 col-sm-6">
-                  <div class="form-group">
-                    <label>Stok</label>
-                     <input type="text" class="form-control" id="stock" name="stock" placeholder="Masukkan stock" value="{{ $produk->stok }}" autofocus required>
-                  </div>
                   <!-- /.form-group -->
                 </div>
               </div>

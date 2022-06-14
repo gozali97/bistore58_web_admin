@@ -47,7 +47,7 @@ class ProdukController extends Controller
         }
 
         $produk = Produk::create(array_merge($request->all(), [
-            'gambar' => $fileName
+            'gambar' => 'produk/'.$fileName
         ]));
         // $input = $request->all();
 
@@ -99,13 +99,14 @@ class ProdukController extends Controller
         $produk = Produk::findOrFail($id);
         $input['gambar'] = $produk->gambar;
 
-        if ($request->gambar->getClientOriginalName()){
+        if (isset($request->gambar)) {
             if (!$produk->gambar == NULL){
-                unlink(public_path('produk/').($produk->gambar));
+                unlink(public_path('storage/').($produk->gambar));
             }
             $file =  str_replace(' ', '', $request->gambar->getClientOriginalName());
-            $input['gambar'] = date('mYdHs') . rand(1, 999) . '_' . $file;
-            $request->gambar->storeAs('public/produk', $input['gambar']);
+            $filename = date('mYdHs') . rand(1, 999) . '_' . $file;
+            $input['gambar'] = 'produk/'.$filename;
+            $request->gambar->storeAs('public/produk', $filename);
         }
 
         $produk->update($input);
