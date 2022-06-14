@@ -39,25 +39,25 @@ class ProdukController extends Controller
     public function store(Request $request)
     {
         // dd($request->all());die();
-        // $fileName = '';
-        // if ($request->gambar->getClientOriginalName()) {
-        //     $file = str_replace(' ', '', $request->gambar->getClientOriginalName());
-        //     $fileName = date('mYdHs') . rand(1, 999) . '_' . $file;
-        //     $request->gambar->storeAs('public/produk', $fileName);
-        // }
-
-        // $produk = Produk::create(array_merge($request->all(), [
-        //     'gambar' => $fileName
-        // ]));
-        $input = $request->all();
-
-        if ($request->gambar->getClientOriginalName()){
-            $file =  str_replace(' ', '', $request->gambar->getClientOriginalName());
-            $input['gambar'] = date('mYdHs') . rand(1, 999) . '_' . $file;
-            $request->gambar->storeAs('public/produk', $input['gambar']);
+        $fileName = '';
+        if ($request->gambar->getClientOriginalName()) {
+            $file = str_replace(' ', '', $request->gambar->getClientOriginalName());
+            $fileName = date('mYdHs') . rand(1, 999) . '_' . $file;
+            $request->gambar->storeAs('public/produk', $fileName);
         }
 
-        Produk::create($input);
+        $produk = Produk::create(array_merge($request->all(), [
+            'gambar' => $fileName
+        ]));
+        // $input = $request->all();
+
+        // if ($request->gambar->getClientOriginalName()){
+        //     $file =  str_replace(' ', '', $request->gambar->getClientOriginalName());
+        //     $input['gambar'] = date('mYdHs') . rand(1, 999) . '_' . $file;
+        //     $request->gambar->storeAs('public/produk', $input['gambar']);
+        // }
+
+        // Produk::create($input);
         return redirect('produk');
     }
 
