@@ -73,9 +73,7 @@ class UserController extends Controller
     {
         $input = $request->all();
         $user = User::findOrFail($id);
-        $input = [
-            'password' => bcrypt($request->password)
-        ];
+        $input ['password'] = bcrypt($request->password);
         $user->update($input);
         return redirect('user')->with('status','Anda berhasil mengubah data user ');
     }

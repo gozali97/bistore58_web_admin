@@ -36,15 +36,15 @@
               <div class="card-body">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Nama Lengkap</label>
-                  <input type="text" class="form-control" id="name" name="name" placeholder="Enter email" value="{{ $user->name }}" autofocus required>
+                  <input type="text" class="form-control" id="name" name="name" placeholder="Masukkan Nama" value="{{ $user->name }}" autofocus required>
                 </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">Alamat Email</label>
-                  <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" value="{{ $user->email }}" autofocus required>
+                  <input type="email" class="form-control" id="email" name="email" placeholder="Masukkan Email" value="{{ $user->email }}" autofocus required>
                 </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">No Handphone</label>
-                  <input type="number" class="form-control" id="phone" name="phone" placeholder="Enter no handphone" value="{{ $user->phone }}" autofocus required>
+                  <input type="number" class="form-control" id="phone" name="phone" placeholder="Masukkan no handphone" value="{{ $user->phone }}" autofocus required>
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Password</label>
