@@ -29,6 +29,7 @@
             <div class="row invoice-info">
                 <div class="col-4 invoice-col">
                 @foreach($listSelesai as $data)
+                Nama Penerima:<br>
                 <address>
                   <strong>{{$data->nama_penerima}}</strong><br>
                   {{$data->detail_lokasi}}<br>
@@ -90,7 +91,7 @@
             <!-- this row will not appear when printing -->
             <div class="row no-print">
               <div class="col-12">
-                <a href="{{route('printTransaksi', $data->id)}}" rel="noopener" target="_blank" class="btn btn-default"><i class="fas fa-print"></i> Print</a>
+                <a href="{{route('printTransaksi', $data->order_id)}}" rel="noopener" target="_blank" class="btn btn-default"><i class="fas fa-print"></i> Print</a>
                 <a href="{{ route('transaksi.index') }}" class="btn btn-primary">Kembali</a>  
             </div>
             </div>

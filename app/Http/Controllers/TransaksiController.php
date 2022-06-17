@@ -149,11 +149,19 @@ class TransaksiController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $transaksi = Transaksi::findOrFail($id);
+
+        // if (!$produk->image == NULL){
+        //     unlink(public_path($produk->image));
+        // }
+
+        Transaksi::destroy($id);
+        return redirect()->back()->with('status', 'Anda berhasil menghapus transaksi ' . $transaksi->nama_penerima);
     }
 
-    public function details($id){
-        $transaksiSelesai['listSelesai'] = Transaksi::with('details.produk', 'user')->where("Status", "NOT LIKE", "%Menunggu Pembayaran%")->get();
+    public function details($order_id){
+        $transaksiSelesai['listSelesai'] = Transaksi::with('details.produk', 'user')
+        ->where("order_id", $order_id)->get();
         // dd($transaksiSelesai['listSelesai']);
         return view('detailtransaksi')->with($transaksiSelesai);
     }
@@ -164,8 +172,9 @@ class TransaksiController extends Controller
         return view('alltransaksi')->with($transaksiSelesai);
     }
 
-    public function print($id){
-        $transaksiSelesai['listSelesai'] = Transaksi::with('details.produk', 'user')->where("Status", "NOT LIKE", "%Menunggu Pembayaran%")->get();
+    public function print($order_id){
+        $transaksiSelesai['listSelesai'] = Transaksi::with('details.produk', 'user')
+        ->where("order_id", $order_id)->get();
         // dd($transaksiSelesai['listSelesai']);
         return view('printtransaksi')->with($transaksiSelesai);
     }

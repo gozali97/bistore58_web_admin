@@ -18,7 +18,7 @@
     <!-- title row -->
     <div class="row">
       <div class="col-12">
-        <h1 class="text-center">Nota Transaksi</h1>
+        <h1 class="text-center">Invoice</h1>
         <h2 class="page-header">
           <img src="{{ asset('dist/img/baliindah.png') }}" width="30" height="30"> Bali Indah Photo
           <small class="float-right">Tanggal: {{ date('d-m-Y') }}</small>
@@ -30,6 +30,7 @@
     <div class="row invoice-info mt-2">
         <div class="col-4 invoice-col">
         @foreach($listSelesai as $data)
+        Nama Penerima:<br>
         <address>
           <strong>{{$data->nama_penerima}}</strong><br>
           {{$data->detail_lokasi}}<br>
@@ -77,17 +78,16 @@
               <td>{{$detail->produk->nama_produk}}</td>
               <td>{{$detail->total_item}}</td>
               <td>{{$detail->produk->deskripsi}}</td>
-              <td>{{$detail->produk->harga}}</td>
+              <td>{{"Rp. ".number_format($detail->produk->harga)}}</td>
             </tr>
             @endforeach
             </tbody>
-            @endforeach
           </table>
+    @endforeach
         </div>
         <!-- /.col -->
       </div>
     <!-- /.row -->
-
     <div class="row">
       <!-- accepted payments column -->
       @foreach($listSelesai as $data)
