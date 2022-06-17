@@ -161,7 +161,7 @@ class TransaksiController extends Controller
     public function printAll(){
         $transaksiSelesai['listSelesai'] = Transaksi::with('details.produk', 'user')->where("Status", "NOT LIKE", "%Menunggu Pembayaran%")->get();
         dd($transaksiSelesai['listSelesai']);
-        return view('allTransaksi')->with($transaksiSelesai);
+        return view('alltransaksi')->with($transaksiSelesai);
     }
 
     public function print($id){
