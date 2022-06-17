@@ -90,6 +90,7 @@
             <!-- /.card-body -->
             <div class="card-footer">
               <button type="submit" class="btn btn-primary">Submit</button>
+              <a href="{{ route('produk.index') }}" class="btn btn-warning">Kembali</a>
             </div>
           </div>
           <!-- /.card -->

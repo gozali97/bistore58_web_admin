@@ -28,6 +28,9 @@ Route::get('/transaksi/confirm/{id}', 'TransaksiController@confirm')->name('tran
 Route::get('/transaksi/packing/{id}', 'TransaksiController@packing')->name('transaksiPacking');
 Route::get('/transaksi/kirim/{id}', 'TransaksiController@kirim')->name('transaksiKirim');
 Route::get('/transaksi/selesai/{id}', 'TransaksiController@selesai')->name('transaksiSelesai');
+Route::get('/transaksi/details/{id}', 'TransaksiController@details')->name('transaksiDetails');
+Route::get('/transaksi/printAll', 'TransaksiController@printAll')->name('allTransaksi');
+Route::get('/transaksi/print/{id}', 'TransaksiController@print')->name('printTransaksi');
 Route::get('/notif', 'VtwebController@index');
 Route::resource('/kategori', 'KategoriController');
 Route::get('/payment/payment_submit', 'PymentController@payment_submit');

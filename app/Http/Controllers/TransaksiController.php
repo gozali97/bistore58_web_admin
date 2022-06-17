@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Transaksi;
-use App\TransaksiDetail;
+use App\TransaksiDetails;
 
 class TransaksiController extends Controller
 {
@@ -150,6 +150,24 @@ class TransaksiController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function details($id){
+        $transaksiSelesai['listSelesai'] = Transaksi::with('details.produk', 'user')->where("Status", "NOT LIKE", "%Menunggu Pembayaran%")->get();
+        // dd($transaksiSelesai['listSelesai']);
+        return view('detailtransaksi')->with($transaksiSelesai);
+    }
+
+    public function printAll(){
+        $transaksiSelesai['listSelesai'] = Transaksi::with('details.produk', 'user')->where("Status", "NOT LIKE", "%Menunggu Pembayaran%")->get();
+        dd($transaksiSelesai['listSelesai']);
+        return view('allTransaksi')->with($transaksiSelesai);
+    }
+
+    public function print($id){
+        $transaksiSelesai['listSelesai'] = Transaksi::with('details.produk', 'user')->where("Status", "NOT LIKE", "%Menunggu Pembayaran%")->get();
+        // dd($transaksiSelesai['listSelesai']);
+        return view('printTransaksi')->with($transaksiSelesai);
     }
 
     public function pushNotif($title, $message, $mFcm)

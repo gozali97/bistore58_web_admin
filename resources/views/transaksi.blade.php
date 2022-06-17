@@ -75,6 +75,9 @@
                     <!-- /.card-header -->
                     <div class="card-header">
                       <h3 class="card-title">Transaksi Diproses</h3>
+                           {{-- @foreach($listSelesai as $data) --}}
+                          {{-- <a class="float-right" href="{{route('allTransaksi')}}" rel="noopener" target="_blank" class="btn btn-default"><i class="fas fa-print"></i> Print</a> --}}
+                          
                     </div>
                     <div class="card-body md-3">
                       <table class="table table-bordered">
@@ -111,13 +114,15 @@
                                   <div class="d-grid gap-2 d-md-block">
                                     @if($data->status == "Dikirim")
                                     <a href="{{route('transaksiSelesai', $data->id)}}"  class="btn btn-block btn-primary">Selesai</a>
-                                    {{-- <a href="#" class="btn btn-danger"><i class="fa fa-trash mr-1"></i>Hapus</a> --}}
+                                    <a href="{{route('transaksiDetails', $data->id)}}"  class="btn btn-block btn-secondary">Detail</a>
                                     @elseif($data->status == "Pembayaran Dikonfirmasi")
                                     <a href="{{route('transaksiPacking', $data->id)}}"  class="btn btn-block btn-warning">Packing</a>
+                                    <a href="{{route('transaksiDetails', $data->id)}}"  class="btn btn-block btn-secondary">Detail</a>
                                     @elseif($data->status == "Packing")
                                     <a href="{{route('transaksiKirim', $data->id)}}"  class="btn btn-block btn-success">Dikirim</a>
+                                    <a href="{{route('transaksiDetails', $data->id)}}"  class="btn btn-block btn-secondary">Detail</a>
                                     @elseif($data->status == "Selesai" || $data->status == "Batal")
-                                    <a href="#"  class="btn btn-block btn-secondary">Detail</a>
+                                    <a href="{{route('transaksiDetails', $data->id)}}"  class="btn btn-block btn-secondary">Detail</a>
                                     @endif
                                   </div>
                                 </td>

@@ -18,7 +18,15 @@
         </div><!-- /.container-fluid -->
       </div>
       <!-- /.content-header -->
-  
+      <div class="box-header with-border">
+        @if(session('status'))
+            <div class="alert alert-success alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                <i class="icon fa fa-check"></i> Success! &nbsp;
+                {{ session('status') }}
+            </div>
+        @endif
+      </div>
       <!-- Main content -->
       <section class="content">
         <div class="container-fluid">
@@ -50,7 +58,7 @@
                         <td>{{$data->phone}}</td>
                         <td>{{$data->role}}</td>
                         <td>
-                            <a href="#" class="btn btn-primary"><i class="fa fa-edit mr-1"></i>Edit</a>
+                            <a href="{{ route('user.edit', ['id' => $data->id]) }}" class="btn btn-primary"><i class="fa fa-edit mr-1"></i>Edit</a>
                         </td>
                         <td>
                              <form action="{{ route('user.destroy', ['id' => $data->id]) }}" method="post" onsubmit="return confirm('Apa anda yakin ingin menghapus user ini ?')">

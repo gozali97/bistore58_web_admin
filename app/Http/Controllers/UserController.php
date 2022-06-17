@@ -58,7 +58,8 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::findOrFail($id);
+        return view('edituser', compact('user'));
     }
 
     /**
@@ -70,7 +71,13 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $input = $request->all();
+        $user = User::findOrFail($id);
+        $input = [
+            'password' => bcrypt($request->password)
+        ];
+        $user->update($input);
+        return redirect('user')->with('status','Anda berhasil mengubah data user ');
     }
 
     /**
