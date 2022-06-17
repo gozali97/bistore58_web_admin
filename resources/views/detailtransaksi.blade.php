@@ -50,7 +50,7 @@
               </div>
               <!-- /.col -->
             </div>        
-            {{-- @endforeach --}}
+            @endforeach
             <!-- /.row -->
 
             <!-- Table row -->
@@ -79,7 +79,6 @@
                     <td>{{$detail->produk->deskripsi}}</td>
                     <td>{{$detail->produk->harga}}</td>
                   </tr>
-                  @endforeach
                   </tbody>
                   @endforeach
                 </table>
