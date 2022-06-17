@@ -50,7 +50,7 @@
               </div>
               <!-- /.col -->
             </div>        
-            @endforeach
+            {{-- @endforeach --}}
             <!-- /.row -->
 
             <!-- Table row -->
@@ -79,9 +79,10 @@
                     <td>{{$detail->produk->deskripsi}}</td>
                     <td>{{$detail->produk->harga}}</td>
                   </tr>
-                  </tbody>
                   @endforeach
+                  </tbody>
                 </table>
+                @endforeach
               </div>
               <!-- /.col -->
             </div>
@@ -89,7 +90,7 @@
             <!-- this row will not appear when printing -->
             <div class="row no-print">
               <div class="col-12">
-                <a href="{{route('printTransaksi', $data->id)}}" rel="noopener" target="_blank" class="btn btn-default"><i class="fas fa-print"></i> Print</a>
+                <a href="{{route('printtransaksi', $data->id)}}" rel="noopener" target="_blank" class="btn btn-default"><i class="fas fa-print"></i> Print</a>
                 <a href="{{ route('transaksi.index') }}" class="btn btn-primary">Kembali</a>  
             </div>
             </div>
