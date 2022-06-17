@@ -24,7 +24,7 @@ Route::post('checkout', 'Api\TransaksiController@store');
 Route::get('checkout/user/{id}', 'Api\TransaksiController@history');
 Route::post('checkout/batal/{id}', 'Api\TransaksiController@batal');
 Route::post('push', 'Api\TransaksiController@pushNotif');
-
+// Route::post('/kategori/delete/{id_kategori}', 'KategoriController@delete')->name('kategori.delete');
 Route::post('/vt_notif', 'VtwebController@notif')->name('notif');
 
 // Route::post('produk', 'Api\ProdukController@delete')->name('deleteProduct');

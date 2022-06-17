@@ -80,8 +80,16 @@ class KategoriController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id_kategori)
     {
-        //
+        $kategori = Kategori::findOrFail($id_kategori);
+
+        Kategori::destroy($id_kategori);
+        return redirect()->back()->with('status', 'Anda berhasil menghapus kategori ' . $kategori->nama_kategori);
+        
     }
+
+    // public function delete($id_kategori){
+        
+    // }
 }

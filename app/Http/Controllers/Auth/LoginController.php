@@ -43,20 +43,28 @@ class LoginController extends Controller
             return $this->sendLockoutResponse($request);
         }
 
-        if ($this->attemptLogin($request)) {
-            $user = User::where('email', $request->email)->first();
-            if($user->role == 'Admin') {
+
+        $user = User::where('email', $request->email)->first();
+        if(isset($user->role) && $user->role == 'Admin') {
+            if ($this->attemptLogin($request)) {
                 return $this->sendLoginResponse($request);
             }else{
+                $this->incrementLoginAttempts($request);
                 return $this->sendFailedLoginResponse($request);
             }
+        }else{
+            // If the login attempt was unsuccessful we will increment the number of attempts
+            // to login and redirect the user back to the login form. Of course, when this
+            // user surpasses their maximum number of attempts they will get locked out.
+            $this->incrementLoginAttempts($request);
+
+            return $this->sendFailedLoginResponse($request);
         }
 
-        // If the login attempt was unsuccessful we will increment the number of attempts
-        // to login and redirect the user back to the login form. Of course, when this
-        // user surpasses their maximum number of attempts they will get locked out.
-        $this->incrementLoginAttempts($request);
+        
 
-        return $this->sendFailedLoginResponse($request);
+        // $this->incrementLoginAttempts($request);
+
+        // return $this->sendFailedLoginResponse($request);
     }
 }

@@ -18,6 +18,17 @@
         </div><!-- /.container-fluid -->
       </div>
       <!-- /.content-header -->
+
+      
+      <div class="box-header with-border">
+        @if(session('status'))
+            <div class="alert alert-danger alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                <i class="icon fa fa-check"></i> Success! &nbsp;
+                {{ session('status') }}
+            </div>
+        @endif
+    </div>
   
       <!-- Main content -->
       <section class="content">
@@ -83,8 +94,11 @@
                                 <td>{{$data->updated_at}}</td> --}}
                                 <td>
                                   <div class="d-grid gap-2 d-md-block">
-                                    <a href="#" class="btn btn-primary"><i class="fa fa-edit mr-1"></i>Edit</a>
-                                    <a href="#" class="btn btn-danger"><i class="fa fa-trash mr-1"></i>Hapus</a>
+                                    <form action="{{ route('kategori.destroy', ['id' => $data->id_kategori]) }}" method="post" onsubmit="return confirm('Apa anda yakin ingin menghapus kategori ini ?')">
+                                      @csrf
+                                      @method('DELETE')
+                                      <button class="btn btn-danger" type="submit"><i class="fa fa-trash mr-1"></i>Delete</button>
+                                  </form>
                                   </div>
                                 </td>
                               </tr>  
