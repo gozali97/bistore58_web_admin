@@ -48,7 +48,7 @@
               <td>{{$data->nama_penerima}}</td>
               <td><ul>
                 @foreach($data->details as $detail)
-                  <li>{{ $detail->produk->nama_produk}}</li>
+                  <li>{{ $detail->produk->nama_produk}} ({{ $detail->total_item}} Pcs)</li>
                 @endforeach
                 </ul></td>
               <td>{{$data->total_produk}}</td>

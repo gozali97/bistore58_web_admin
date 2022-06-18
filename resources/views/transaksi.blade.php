@@ -111,7 +111,7 @@
                                 <td>
                                   <ul>
                                   @foreach($data->details as $detail)
-                                    <li>{{ $detail->produk->nama_produk }}</li>
+                                    <li>{{ $detail->produk->nama_produk }} ({{ $detail->total_item}} Pcs)</li>
                                   @endforeach
                                   </ul>
                                   </td>
