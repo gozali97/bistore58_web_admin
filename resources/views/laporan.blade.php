@@ -26,14 +26,15 @@
         </div>
         <!-- /.card-header -->
         <div class="card-body">
+          <div class="table-responsive">
           <table id="example1" class="table table-bordered table-striped">
             <thead>
             <tr>
               <th>No</th>
               <th>Nama</th>
+              <th>Alamat</th>
               <th>Produk</th>
-              <th>Total Produk</th>
-              <th>Bank</th>
+              <th>Pembayaran</th>
               <th>Total Harga</th>
               <th>Status</th>
             </tr>
@@ -46,19 +47,20 @@
             <tr>
               <td>{{$no++}}</td>
               <td>{{$data->nama_penerima}}</td>
+              <td>{{$data->detail_lokasi}}</td>
               <td><ul>
                 @foreach($data->details as $detail)
                   <li>{{ $detail->produk->nama_produk}} ({{ $detail->total_item}} Pcs)</li>
                 @endforeach
                 </ul></td>
-              <td>{{$data->total_produk}}</td>
-              <td>{{$data->bank}}</td>
+              <td>{{strtoupper($data->bank)}}</td>
               <td>{{"Rp. ".number_format($data->total_harga)}}</td>
               <td>{{$data->status}}</td>
             </tr>
             @endforeach
             </tbody>
           </table>
+        </div>
         </div>
         <!-- /.card-body -->
       </div>
