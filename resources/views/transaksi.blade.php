@@ -121,21 +121,21 @@
                                 <td>
                                   <div class="d-grid gap-2 d-md-block">
                                     @if($data->status == "Dikirim")
-                                    <a href="{{route('transaksiSelesai', $data->order_id)}}"  class="btn btn-block btn-primary">Selesai</a>
-                                    <a href="{{route('transaksiDetails', $data->id)}}"  class="btn btn-block btn-secondary">Detail</a>
+                                    <a href="{{route('transaksiSelesai', $data->id)}}"  class="btn btn-block btn-primary">Selesai</a>
+                                    <a href="{{route('transaksiDetails', $data->order_id)}}"  class="btn btn-block btn-secondary">Detail</a>
                                     @elseif($data->status == "Pembayaran Dikonfirmasi")
                                     <a href="{{route('transaksiPacking', $data->id)}}"  class="btn btn-block btn-warning">Packing</a>
                                     <a href="{{route('transaksiDetails', $data->order_id)}}"  class="btn btn-block btn-secondary">Detail</a>
                                     @elseif($data->status == "Packing")
                                     <a href="{{route('transaksiKirim', $data->id)}}"  class="btn btn-block btn-success">Dikirim</a>
-                                    <a href="{{route('transaksiDetails', $data->id)}}"  class="btn btn-block btn-secondary">Detail</a>
+                                    <a href="{{route('transaksiDetails', $data->order_id)}}"  class="btn btn-block btn-secondary">Detail</a>
                                     @elseif($data->status == "Selesai" || $data->status == "Batal")
-                                    <a href="{{route('transaksiDetails', $data->id)}}"  class="btn btn-block btn-secondary">Detail</a>
-                                    <form action="{{ route('transaksi.destroy', ['id' => $data->id]) }}" method="post" onsubmit="return confirm('Apa anda yakin ingin menghapus transaksi ini ?')">
+                                    <a href="{{route('transaksiDetails', $data->order_id)}}"  class="btn btn-block btn-secondary">Detail</a>
+                                    {{-- <form action="{{ route('transaksi.destroy', ['id' => $data->id]) }}" method="post" onsubmit="return confirm('Apa anda yakin ingin menghapus transaksi ini ?')">
                                       @csrf
                                       @method('DELETE')
                                       <button class="btn btn-block btn-danger mt-2" type="submit"><i class="fa fa-trash mr-1"></i>Delete</button>
-                                  </form>
+                                  </form> --}}
                                     @endif
                                   </div>
                                 </td>
