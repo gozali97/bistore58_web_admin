@@ -23,6 +23,7 @@ Route::resource('/user', 'UserController');
 Route::resource('/produk', 'ProdukController');
 Route::get('/produk/detail/{id}', 'ProdukController@detail')->name('produk.detail');
 Route::resource('/transaksi', 'TransaksiController');
+Route::resource('/laporan', 'LaporanController');
 Route::get('/transaksi/batal/{id}', 'TransaksiController@batal')->name('transaksiBatal');
 Route::get('/transaksi/confirm/{id}', 'TransaksiController@confirm')->name('transaksiConfirm');
 Route::get('/transaksi/packing/{id}', 'TransaksiController@packing')->name('transaksiPacking');
