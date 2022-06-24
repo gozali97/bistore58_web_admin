@@ -39,6 +39,16 @@
                   </div>
                   <!-- /.form-group -->
                   <div class="form-group">
+                    <label>model</label>
+                    <input type="text" class="form-control" id="model" name="model" placeholder="Masukkan model" value="{{ $produk->model }}" autofocus required>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label>Berat</label>
+                     <input type="text" class="form-control" id="berat" name="berat" placeholder="Masukkan berat" value="{{ $produk->berat }}" autofocus required>
+                  </div>
+                  <!-- /.form-group -->
+                  <div class="form-group">
                     <label>Kategori</label>
                      <select name="kategori_id" class="form-control">
                           @foreach($kategori as $category)
@@ -46,22 +56,17 @@
                           @endforeach
                       </select>
                   </div>
-                  <!-- /.form-group -->
-                  
-                  <!-- /.form-group -->
                   <div class="form-group">
                     <label>Harga</label>
                     <input type="text" class="form-control" id="harga" name="harga" placeholder="Masukkan harga" value="{{ $produk->harga }}" autofocus required>
                   </div>
-                  
+                </div>
+                <!-- /.col -->
+                <div class="col-md-6">
                   <div class="form-group">
                     <label>Stok</label>
                      <input type="text" class="form-control" id="stock" name="stock" placeholder="Masukkan stock" value="{{ $produk->stok }}" autofocus required>
                   </div>
-                  <!-- /.form-group -->
-                </div>
-                <!-- /.col -->
-                <div class="col-md-6">
                   <div class="form-group">
                     <label>Deskripsi</label>
                     <textarea class="form-control" id="deskripsi" name="deskripsi">{{ $produk->deskripsi }}</textarea>

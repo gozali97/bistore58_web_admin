@@ -38,11 +38,13 @@
                 <!-- /.card-header -->
                     <!-- /.card-header -->
                     <div class="card-body md-3">
-                      <table class="table table-striped">
+                      <table class="table table-striped table-hover">
                         <thead>
                           <tr style="align-content: center">
                             <th>No</th>
                             <th>Nama Produk</th>
+                            <th>Model</th>
+                            <th>Berat</th>
                             <th>Harga</th>
                             <th>Stok</th>
                             {{-- <th>Gambar</th> --}}
@@ -57,6 +59,8 @@
                             <tr>
                                 <td>{{ $no++ }}</td>
                                 <td>{{$data->nama_produk}}</td>
+                                <td>{{$data->model}}</td>
+                                <td>{{$data->berat}} Kg</td>
                                 <td>{{"Rp. ".number_format($data->harga)}}</td>
                                 <td>{{$data->stok}} Pcs</td>
                                 {{-- <td><img class="rounded-square" width="50" height="50" src="{{ url($data->gambar) }}" alt=""></td> --}}
@@ -98,6 +102,20 @@
                                 <div class="form-group">
                                   <label>Nama Produk</label>
                                   <input type="text" class="form-control" id="nama_produk" placeholder="nama" name="nama_produk">
+                                </div>
+                                <div class="row">
+                                  <div class="col-sm-6">
+                                    <div class="form-group">
+                                      <label>Model</label>
+                                      <input type="text" class="form-control" placeholder="Model" name="model">
+                                    </div>
+                                  </div>
+                                  <div class="col-sm-6">
+                                    <div class="form-group">
+                                      <label>Berat</label>
+                                      <input type="text" class="form-control" placeholder="Berat" name="berat">
+                                    </div>
+                                  </div>
                                 </div>
                                 <div class="row">
                                   <div class="col-sm-6">
