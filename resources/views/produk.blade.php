@@ -45,8 +45,8 @@
                             <th>Nama Produk</th>
                             <th>Model</th>
                             <th>Berat</th>
-                            <th>Harga</th>
                             <th>Stok</th>
+                            <th>Harga</th>
                             {{-- <th>Gambar</th> --}}
                             <th>Aksi</th>
                           </tr>
@@ -61,8 +61,8 @@
                                 <td>{{$data->nama_produk}}</td>
                                 <td>{{$data->model}}</td>
                                 <td>{{$data->berat}} Kg</td>
-                                <td>{{"Rp. ".number_format($data->harga)}}</td>
                                 <td>{{$data->stok}} Pcs</td>
+                                <td>{{"Rp. ".number_format($data->harga)}}</td>
                                 {{-- <td><img class="rounded-square" width="50" height="50" src="{{ url($data->gambar) }}" alt=""></td> --}}
                                 <td>
                                       <a href="{{ route('produk.edit', ['id' => $data->id]) }}" class="btn btn-primary"><i class="fa fa-edit mr-1"></i>Edit</a>
