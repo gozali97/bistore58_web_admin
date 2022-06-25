@@ -34,7 +34,7 @@
                 <div class="card-header">
                 </div>
                 <!-- /.card-header -->
-                <div class="card-body p-0">
+                <div class="card-body table-responsive p-0" style="height: 300px">
                   <table class="table table-striped table-hover">
                     <thead>
                       <tr>

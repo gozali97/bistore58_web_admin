@@ -71,8 +71,8 @@
                 </div>
                 <!-- /.card-header -->
                     <!-- /.card-header -->
-                    <div class="card-body md-3">
-                      <table class="table table-bordered">
+                    <div class="card-body md-3 table-responsive p-0" style="height: 300px">
+                      <table class="table table-head-fixed table-bordered">
                         <thead>
                           <tr>
                             <th>No</th>

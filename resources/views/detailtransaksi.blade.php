@@ -56,7 +56,7 @@
 
             <!-- Table row -->
             <div class="row">
-              <div class="col-12 table-responsive">
+              <div class="col-12 table-responsive p-0" style="height: 300px">
                 <table class="table table-striped">
                   <thead>
                   <tr>

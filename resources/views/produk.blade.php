@@ -37,8 +37,8 @@
                 </div>
                 <!-- /.card-header -->
                     <!-- /.card-header -->
-                    <div class="card-body md-3">
-                      <table class="table table-striped table-hover">
+                    <div class="card-body md-3 table-responsive p-0" style="height: 300px">
+                      <table class="table table-striped table-hover ">
                         <thead>
                           <tr style="align-content: center">
                             <th>No</th>

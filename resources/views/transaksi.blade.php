@@ -35,8 +35,8 @@
                     <div class="card-header">
                       <h3 class="card-title">Transaksi Menunggu</h3>
                     </div>
-                    <div class="card-body md-3">
-                      <table class="table table-bordered">
+                    <div class="card-body md-3 table-responsive p-0" style="height: 300px">
+                      <table class="table table-head-fixed table-bordered">
                         <thead>
                           <tr>
                             <th>No</th>
@@ -87,8 +87,8 @@
                           {{-- <a class="float-right" href="{{route('allTransaksi')}}" rel="noopener" target="_blank" class="btn btn-default"><i class="fas fa-print"></i> Print</a> --}}
                           
                     </div>
-                    <div class="card-body md-3">
-                      <table class="table table-bordered">
+                    <div class="card-body md-3 table-responsive p-0" style="height: 300px">
+                      <table class="table table-bordered table-head-fixed">
                         <thead>
                           <tr>
                             <th>No</th>

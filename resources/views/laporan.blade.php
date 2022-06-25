@@ -19,15 +19,14 @@
       </div>
 
       <section class="content">
-        <div class="container-fluid">
+      <div class="container-fluid">
       <div class="card">
         <div class="card-header">
           <h3 class="card-title"></h3>
         </div>
         <!-- /.card-header -->
-        <div class="card-body">
-          <div class="table-responsive">
-          <table id="example1" class="table table-bordered table-striped">
+        <div class="card-body table-responsive p-0" style="height: 300px">
+          <table id="example1" class="table table-head-fixed table-bordered table-striped">
             <thead>
             <tr>
               <th>No</th>
@@ -60,7 +59,6 @@
             @endforeach
             </tbody>
           </table>
-        </div>
         </div>
         <!-- /.card-body -->
       </div>
