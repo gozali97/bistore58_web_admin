@@ -130,7 +130,7 @@
                                     <a href="{{route('transaksiKirim', $data->id)}}"  class="btn btn-block btn-success">Dikirim</a>
                                     <a href="{{route('transaksiDetails', $data->order_id)}}"  class="btn btn-block btn-secondary">Detail</a>
                                     @elseif($data->status == "Selesai" || $data->status == "Batal")
-                                    <a href="{{route('transaksiDetails', $data->order_id)}}"  class="btn btn-block btn-secondary">Detail</a>
+                                    <a href="{{route('transaksiDetails', $data->order_id || $data->id)}}"  class="btn btn-block btn-secondary">Detail</a>
                                     {{-- <form action="{{ route('transaksi.destroy', ['id' => $data->id]) }}" method="post" onsubmit="return confirm('Apa anda yakin ingin menghapus transaksi ini ?')">
                                       @csrf
                                       @method('DELETE')
