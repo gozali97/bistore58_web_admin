@@ -33,19 +33,19 @@
           <div class="col-12 col-sm-6">
             <h3 class="my-3">{{ $produk->nama_produk }}</h3>
             <p>{{ $produk->deskripsi }}</p>
-  
+
             <hr>
             <h4>Stock : {{ $produk->stok }}</h4>
-  
+
             <div class="bg-gray py-2 px-3 mt-4">
               <h2 class="mb-0">
                 {{ "Rp. ".number_format($produk->harga) }}
               </h2>
             </div>
-  
+
             <div class="mt-4">
                 <a href="{{ route('produk.index') }}" class="btn btn-primary">Kembali</a>
-  
+
             </div>
           </div>
         </div>
